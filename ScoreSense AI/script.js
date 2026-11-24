@@ -371,34 +371,49 @@
 function setAuthMode(mode) {
   const isSignup = mode === "signup";
 
-  const authName = document.getElementById("authName");
-  const authNameGroup = authName?.closest(".form-group")
-    || authName?.parentElement;
+  // IMPORTANT: update the actual authentication mode
+  authMode = mode;
 
-  if (authNameGroup) {
-    authNameGroup.hidden = !isSignup;
-  }
+  const authName = document.getElementById("authName");
 
   if (authName) {
     authName.required = isSignup;
     authName.disabled = !isSignup;
 
-    if (!isSignup) authName.value = "";
+    const authNameGroup =
+      authName.closest(".form-group") ||
+      authName.parentElement;
+
+    if (authNameGroup) {
+      authNameGroup.hidden = !isSignup;
+    }
+
+    if (!isSignup) {
+      authName.value = "";
+    }
   }
 
   const title = document.getElementById("authTitle");
   const subtitle = document.getElementById("authSubtitle");
   const submit = document.getElementById("authSubmit");
 
-  if (title) title.textContent = isSignup
-    ? "Create your account" : "Welcome back";
+  if (title) {
+    title.textContent = isSignup
+      ? "Create your account"
+      : "Welcome back";
+  }
 
-  if (subtitle) subtitle.textContent = isSignup
-    ? "Start tracking your preparation"
-    : "Log in to continue your journey";
+  if (subtitle) {
+    subtitle.textContent = isSignup
+      ? "Start tracking your preparation"
+      : "Log in to continue your journey";
+  }
 
-  if (submit) submit.textContent = isSignup
-    ? "Create Account" : "Log In";
+  if (submit) {
+    submit.innerHTML = isSignup
+      ? 'Create account <span>→</span>'
+      : 'Log in <span>→</span>';
+  }
 }
 
 
