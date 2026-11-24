@@ -367,50 +367,40 @@
   // 4. AUTHENTICATION - UPDATED
   // ==========================================
 
-  function setAuthMode(mode) {
-    authMode = mode;
+  
+function setAuthMode(mode) {
+  const isSignup = mode === "signup";
 
-    $("#authTitle").textContent =
-      mode === "signup" ? "Create your account." : "Welcome back.";
+  const authName = document.getElementById("authName");
+  const authNameGroup = authName?.closest(".form-group")
+    || authName?.parentElement;
 
-    $("#authSubtitle").textContent =
-      mode === "signup"
-        ? "A clearer picture of your progress begins with you."
-        : "Pick up where your progress left off.";
-
-    $("#authSubmit").innerHTML =
-      mode === "signup"
-        ? 'Create account <span>→</span>'
-        : 'Log in <span>→</span>';
-
-    if ($("#authPassword")) {
-      $("#authPassword").autocomplete =
-        mode === "signup" ? "new-password" : "current-password";
-    }
-
-    $("#authNameGroup")?.classList.toggle("hidden", mode === "login");
-    $("#authStudentDetails")?.classList.toggle("hidden", mode === "login");
-
-    $("#authExam")?.closest(".form-two")?.classList.toggle(
-      "hidden", mode === "login"
-    );
-
-    $("#authTarget")?.closest(".form-two")?.classList.toggle(
-      "hidden", mode === "login"
-    );
-
-    if ($("#authModeToggle")) {
-      $("#authModeToggle").textContent =
-        mode === "signup"
-          ? "Already have an account? Log in"
-          : "New to ScoreSense AI? Create an account";
-    }
-
-    const forgot = $("#forgotPasswordButton");
-    if (forgot) {
-      forgot.classList.toggle("hidden", mode !== "login");
-    }
+  if (authNameGroup) {
+    authNameGroup.hidden = !isSignup;
   }
+
+  if (authName) {
+    authName.required = isSignup;
+    authName.disabled = !isSignup;
+
+    if (!isSignup) authName.value = "";
+  }
+
+  const title = document.getElementById("authTitle");
+  const subtitle = document.getElementById("authSubtitle");
+  const submit = document.getElementById("authSubmit");
+
+  if (title) title.textContent = isSignup
+    ? "Create your account" : "Welcome back";
+
+  if (subtitle) subtitle.textContent = isSignup
+    ? "Start tracking your preparation"
+    : "Log in to continue your journey";
+
+  if (submit) submit.textContent = isSignup
+    ? "Create Account" : "Log In";
+}
+
 
   function startAuth() {
     setAuthMode("signup");
