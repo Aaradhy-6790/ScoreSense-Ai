@@ -1,0 +1,1707 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b16" />
+  <meta name="description" content="ScoreSense AI turns test scores into a smarter study plan." />
+
+  <title>ScoreSense AI — Turn Scores Into Success</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- =====================================
+       LANDING PAGE
+  ====================================== -->
+
+  <main class="landing-view" id="landingView">
+
+    <nav class="top-nav shell">
+
+      <a class="brand" href="#" aria-label="ScoreSense AI home">
+        <span class="brand-mark">◎</span>
+        <span>
+          ScoreSense
+          <b>AI</b>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+
+        <button
+          class="theme-toggle"
+          data-theme-toggle
+          aria-label="Toggle theme"
+        >
+          ☼
+          <span>Light mode</span>
+        </button>
+
+        <button
+          class="button button-primary button-small"
+          id="navGetStarted"
+        >
+          Get started
+          <span>↗</span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero shell">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          YOUR PERSONAL PERFORMANCE HQ
+        </div>
+
+        <h1>
+          Know what
+          <br />
+          to study
+          <span class="gradient-text">next.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Most students know their scores. Very few know what is actually
+          holding them back. Turn every mock test into a clearer next move.
+        </p>
+
+        <div class="hero-actions">
+
+          <button
+            class="button button-primary"
+            id="heroGetStarted"
+          >
+            Get started
+            <span>→</span>
+          </button>
+
+          <a class="text-link" href="#features">
+            Explore the platform
+            <span>↓</span>
+          </a>
+
+        </div>
+
+        <div class="hero-proof">
+
+          <div class="avatar-stack">
+            <i>✦</i>
+            <i>↗</i>
+            <i>◎</i>
+          </div>
+
+          <span>
+            Built for focused learners
+            <br />
+            <b>Progress with purpose.</b>
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="visual-glow"></div>
+
+        <div class="preview-card product-preview-card">
+
+          <div class="preview-top">
+
+            <span class="tiny-label">
+              YOUR PERFORMANCE WORKSPACE
+            </span>
+
+            <span class="live-pill">
+              <i></i>
+              READY WHEN YOU ARE
+            </span>
+
+          </div>
+
+          <div class="preview-empty-state">
+
+            <span class="preview-empty-icon">◎</span>
+
+            <strong>Your data. Your progress.</strong>
+
+            <p>
+              Add a real test result to build your score history
+              and understand where to focus next.
+            </p>
+
+          </div>
+
+          <div class="preview-feature-list">
+
+            <div>
+              <span>01</span>
+              <b>Record test scores</b>
+              <small>Overall marks, optional subject split</small>
+            </div>
+
+            <div>
+              <span>02</span>
+              <b>Review chapter notes</b>
+              <small>Only enter details you actually know</small>
+            </div>
+
+            <div>
+              <span>03</span>
+              <b>Track progress</b>
+              <small>Compare percentages across tests</small>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+      </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features shell" id="features">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          LESS GUESSWORK. MORE GROWTH.
+        </div>
+
+        <h2>
+          Your scores have a story.
+          <br />
+          <span class="gradient-text">Let's read it.</span>
+        </h2>
+
+      </div>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+
+          <div class="feature-icon blue">↗</div>
+
+          <h3>Progress tracking</h3>
+
+          <p>
+            See your score trend over time and understand whether
+            your effort is moving the needle.
+          </p>
+
+          <span class="card-index">01 / TRACK</span>
+
+        </article>
+
+        <article class="feature-card">
+
+          <div class="feature-icon purple">⌁</div>
+
+          <h3>Test analysis</h3>
+
+          <p>
+            Record chapter-level score leaks and spot the topics
+            that deserve your attention first.
+          </p>
+
+          <span class="card-index">02 / ANALYZE</span>
+
+        </article>
+
+        <article class="feature-card">
+
+          <div class="feature-icon cyan">✳</div>
+
+          <h3>Smart study planning</h3>
+
+          <p>
+            Turn insights into daily goals so your next study
+            session has a clear purpose.
+          </p>
+
+          <span class="card-index">03 / IMPROVE</span>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- QUOTE -->
+
+    <section class="quote-strip shell">
+
+      <span class="quote-mark">“</span>
+
+      <p id="landingQuote">
+        Consistency beats motivation.
+      </p>
+
+      <span class="quote-attribution">
+        A NOTE TO YOUR FUTURE SELF
+      </span>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="landing-footer shell">
+
+      <a class="brand" href="#">
+        <span class="brand-mark">◎</span>
+        <span>
+          ScoreSense
+          <b>AI</b>
+        </span>
+      </a>
+
+      <span>Turn Scores Into Success.</span>
+      <span>YIIC · Student MVP</span>
+
+    </footer>
+
+  </main>
+
+
+  <!-- =====================================
+       AUTHENTICATION PAGE
+  ====================================== -->
+
+  <section class="auth-view hidden" id="authView">
+
+    <div class="auth-card glass-card">
+
+      <button class="back-link" id="backToLanding">
+        ← Back
+      </button>
+
+      <a class="brand auth-brand" href="#">
+        <span class="brand-mark">◎</span>
+        <span>
+          ScoreSense
+          <b>AI</b>
+        </span>
+      </a>
+
+      <div class="eyebrow">
+        YOUR NEXT CHAPTER STARTS HERE
+      </div>
+
+      <h2 id="authTitle">
+        Create your account.
+      </h2>
+
+      <p class="muted" id="authSubtitle">
+        A clearer picture of your progress begins with you.
+      </p>
+
+      <form class="onboarding-form" id="authForm">
+
+        <!-- NAME -->
+
+        <div id="authNameGroup">
+
+          <label for="authName">
+            Your name
+          </label>
+
+          <input
+            id="authName"
+            name="name"
+            type="text"
+            maxlength="40"
+            autocomplete="name"
+            placeholder="e.g. Aaradhy"
+            required
+          />
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <label for="authEmail">
+          Email address
+        </label>
+
+        <input
+          id="authEmail"
+          type="email"
+          name="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+        />
+
+        <!-- PASSWORD -->
+
+        <label for="authPassword">
+          Password
+        </label>
+
+        <input
+          id="authPassword"
+          type="password"
+          name="password"
+          autocomplete="new-password"
+          minlength="8"
+          placeholder="At least 8 characters"
+          required
+        />
+
+        <!-- LOGIN / SIGNUP TOGGLE -->
+
+        <button
+          class="text-button"
+          id="authModeToggle"
+          type="button"
+        >
+          Already have an account? Log in
+        </button>
+        <div class="auth-divider">
+  <span>OR</span>
+</div>
+
+<button
+  type="button"
+  class="button google-login-button full-width"
+  id="googleLoginButton"
+>
+  <svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true">
+    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 3.2 13.22l7.98 6.19C13.08 13.72 18.04 9.5 24 9.5z"/>
+    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.72 7.18l7.28 5.65c4.25-3.92 7.48-9.72 7.48-17.3z"/>
+    <path fill="#FBBC05" d="M11.18 28.59A14.4 14.4 0 0 1 10.4 24c0-1.59.27-3.13.77-4.59L3.2 13.22A23.9 23.9 0 0 0 0 24c0 3.87.93 7.52 2.58 10.78l8.6-6.19z"/>
+    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.5-5.78l-7.28-5.65c-2.02 1.36-4.6 2.16-8.22 2.16-5.96 0-11.02-4.02-12.82-9.45l-8.6 6.19C6.1 43.08 14.43 48 24 48z"/>
+  </svg>
+  Continue with Google
+</button>
+
+        <!-- STUDENT DETAILS -->
+
+        <div id="authStudentDetails">
+
+          <div class="form-two">
+
+            <div>
+
+              <label for="authStage">
+                Class / stage
+              </label>
+
+              <select id="authStage" required>
+
+                <option value="Foundation">
+                  Foundation (9–10)
+                </option>
+
+                <option value="Class 11" selected>
+                  Class 11
+                </option>
+
+                <option value="Class 12">
+                  Class 12
+                </option>
+
+                <option value="Dropper">
+                  Dropper
+                </option>
+
+              </select>
+
+            </div>
+
+            <div>
+
+              <label for="authExam">
+                Target exam
+              </label>
+
+              <select id="authExam" required>
+
+                <option value="JEE Main">
+                  JEE Main
+                </option>
+
+                <option value="JEE Advanced">
+                  JEE Advanced
+                </option>
+
+                <option value="JEE Main + Advanced">
+                  JEE Main + Advanced
+                </option>
+
+                <option value="NEET">
+                  NEET
+                </option>
+
+                <option value="Boards">
+                  Boards
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+          <div class="form-two">
+
+            <div>
+
+              <label for="authTarget">
+                Target score
+              </label>
+
+              <input
+                id="authTarget"
+                min="1"
+                required
+                step="0.5"
+                type="number"
+                value="220"
+              />
+
+            </div>
+
+            <div>
+
+              <label for="authTargetMax">
+                Out of
+              </label>
+
+              <input
+                id="authTargetMax"
+                min="1"
+                required
+                step="0.5"
+                type="number"
+                value="300"
+              />
+
+            </div>
+
+          </div>
+
+          <p class="field-help">
+            Set "Out of" to the maximum marks on your actual paper.
+            JEE Advanced mock totals can vary.
+          </p>
+
+        </div>
+
+        <button
+          class="button button-primary full-width"
+          id="authSubmit"
+          type="submit"
+        >
+          Create account
+          <span>→</span>
+        </button>
+
+      </form>
+
+      <p class="fine-print">
+        Your account and study records are stored using Supabase.
+        Only sign in on devices you trust.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================
+       MAIN APPLICATION
+  ====================================== -->
+
+  <main class="app-view hidden" id="appView">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+      <a class="brand side-brand" href="#">
+        <span class="brand-mark">◎</span>
+        <span>
+          ScoreSense
+          <b>AI</b>
+        </span>
+      </a>
+
+      <div class="workspace-label">
+        WORKSPACE
+      </div>
+
+      <nav class="side-nav">
+
+        <button class="side-link active" data-page="overview">
+          <span>◫</span>
+          Overview
+        </button>
+
+        <button class="side-link" data-page="tests">
+          <span>▤</span>
+          My tests
+        </button>
+
+        <button class="side-link" data-page="planner">
+          <span>☑</span>
+          Daily goals
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="sidebar-tip">
+
+          <span>✦</span>
+
+          <b>Small steps add up.</b>
+
+          <p>
+            One focused session can change your next score.
+          </p>
+
+        </div>
+
+        <button class="side-link" data-theme-toggle id="sidebarTheme">
+          <span>☼</span>
+          Switch theme
+        </button>
+
+        <button class="side-link logout-link" id="logoutButton">
+          <span>⇥</span>
+          Log out
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN COLUMN -->
+
+    <div class="main-column">
+
+      <!-- HEADER -->
+
+      <header class="app-header">
+
+        <button
+          class="mobile-menu"
+          id="mobileMenu"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+        <div class="breadcrumb">
+          Workspace
+          <span>/</span>
+          <b id="breadcrumbPage">Overview</b>
+        </div>
+
+        <div class="header-right">
+
+          <span class="today-label" id="todayLabel"></span>
+
+          <button
+            class="icon-button"
+            data-theme-toggle
+            aria-label="Toggle theme"
+          >
+            ☼
+          </button>
+
+          <button class="profile-chip" id="editProfileButton">
+
+            <span class="profile-avatar" id="profileInitial">
+              A
+            </span>
+
+            <span id="headerName">
+              Student
+            </span>
+
+            <span>⌄</span>
+
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <div class="page-content">
+
+        <!-- =================================
+             OVERVIEW PAGE
+        ================================== -->
+
+        <section class="page-section" id="overviewPage">
+
+          <div class="welcome-row">
+
+            <div>
+
+              <div class="eyebrow">
+                YOUR PERFORMANCE, IN FOCUS
+              </div>
+
+              <h1 id="welcomeTitle">
+                Good evening, Student
+                <span>✦</span>
+              </h1>
+
+              <p class="muted">
+                A little progress today is still progress.
+                Here's your snapshot.
+              </p>
+
+            </div>
+
+            <button class="button button-primary" id="createTestTop">
+              ＋ Create test
+            </button>
+
+          </div>
+
+
+          <!-- STATS -->
+
+          <div class="stats-grid">
+
+            <article class="stat-card target-stat">
+
+              <div class="stat-top">
+                <span>Target score</span>
+                <span class="stat-icon">◎</span>
+              </div>
+
+              <div class="stat-value" id="targetScoreValue">
+                220
+              </div>
+
+              <div class="stat-foot">
+
+                <span id="examLabel">
+                  JEE Main
+                </span>
+
+                <button class="inline-action" id="editTarget">
+                  Edit target ↗
+                </button>
+
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-top">
+                <span>Latest score</span>
+                <span class="stat-icon">↗</span>
+              </div>
+
+              <div class="stat-value" id="latestScoreValue">
+                —
+              </div>
+
+              <div class="stat-foot">
+
+                <span id="latestTestLabel">
+                  Add your first test
+                </span>
+
+                <span class="trend-pill" id="trendPill">
+                  START
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-top">
+                <span>Target progress</span>
+                <span class="stat-icon">◉</span>
+              </div>
+
+              <div class="stat-value" id="targetProgressValue">
+                0%
+              </div>
+
+              <div class="stat-foot">
+
+                <span id="marksRemaining">
+                  Add a test to begin
+                </span>
+
+                <span class="mini-progress">
+                  <i id="targetProgressBar"></i>
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="stat-card">
+
+              <div class="stat-top">
+                <span>Study streak</span>
+                <span class="stat-icon">✧</span>
+              </div>
+
+              <div class="stat-value">
+                <span id="streakValue">0</span>
+                <small>days</small>
+              </div>
+
+              <div class="stat-foot">
+
+                <span>Keep showing up</span>
+
+                <span class="streak-fire">✦</span>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- DASHBOARD GRID -->
+
+          <div class="dashboard-grid">
+
+            <!-- SCORE CHART -->
+
+            <article class="panel chart-panel">
+
+              <div class="panel-heading">
+
+                <div>
+
+                  <span class="panel-kicker">
+                    THE BIG PICTURE
+                  </span>
+
+                  <h3>Score progression</h3>
+
+                </div>
+
+                <span class="panel-tag">
+                  TEST HISTORY
+                </span>
+
+              </div>
+
+              <div class="chart-wrap">
+
+                <canvas
+                  id="scoreChart"
+                  aria-label="Score progression chart"
+                ></canvas>
+
+                <div class="chart-empty" id="chartEmpty">
+
+                  Your score journey starts here.
+
+                  <br />
+
+                  <button
+                    class="inline-action"
+                    id="chartCreateTest"
+                    type="button"
+                  >
+                    ＋ Add your first test
+                  </button>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- TARGET -->
+
+            <article class="panel target-panel">
+
+              <div class="panel-heading">
+
+                <div>
+
+                  <span class="panel-kicker">
+                    YOUR NORTH STAR
+                  </span>
+
+                  <h3>On the way to your goal</h3>
+
+                </div>
+
+                <span class="target-ring-icon">◎</span>
+
+              </div>
+
+              <div class="target-number">
+
+                <strong id="targetCurrent">0</strong>
+
+                <span>
+                  /
+                  <b id="targetTotal">220</b>
+                  marks
+                </span>
+
+              </div>
+
+              <div class="large-progress">
+                <i id="largeProgressBar"></i>
+              </div>
+
+              <div class="target-meta">
+
+                <span id="targetPercentText">
+                  0% completed
+                </span>
+
+                <b id="needMarks">
+                  220 to go
+                </b>
+
+              </div>
+
+              <div class="target-note">
+                Your target is a direction, not a deadline.
+                Keep building.
+              </div>
+
+            </article>
+
+
+            <!-- SCORE LEAKS -->
+
+            <article class="panel leaks-panel">
+
+              <div class="panel-heading">
+
+                <div>
+
+                  <span class="panel-kicker">
+                    WHERE MARKS SLIP AWAY
+                  </span>
+
+                  <h3>Biggest score leaks</h3>
+
+                </div>
+
+                <span class="panel-tag">
+                  YOUR INPUT
+                </span>
+
+              </div>
+
+              <div class="leaks-list" id="leaksList">
+
+                <div class="empty-state">
+                  Add chapter-level test analysis to see where
+                  marks may be slipping.
+                </div>
+
+              </div>
+
+              <button class="panel-link" data-page="tests">
+                Add test analysis
+                <span>→</span>
+              </button>
+
+            </article>
+
+
+            <!-- NEXT FOCUS -->
+
+            <article class="panel ai-panel">
+
+              <div class="ai-orb">◎</div>
+
+              <div class="ai-copy">
+
+                <span class="panel-kicker">
+                  BASED ON YOUR ENTRIES
+                </span>
+
+                <h3>Your next focus</h3>
+
+                <p id="nextFocusText">
+                  Log a test and optionally add chapter-level marks
+                  lost. Your next focus will be calculated from those entries.
+                </p>
+
+                <span class="coming-soon" id="nextFocusTag">
+                  AWAITING YOUR TEST DATA
+                </span>
+
+              </div>
+
+              <div class="ai-spark">✧</div>
+
+            </article>
+
+          </div>
+
+
+          <!-- BOTTOM GRID -->
+
+          <div class="bottom-grid">
+
+            <article class="panel goals-panel">
+
+              <div class="panel-heading">
+
+                <div>
+
+                  <span class="panel-kicker">
+                    MAKE TODAY COUNT
+                  </span>
+
+                  <h3>Today's goals</h3>
+
+                </div>
+
+                <button class="inline-action" data-page="planner">
+                  View all ↗
+                </button>
+
+              </div>
+
+              <div class="goal-preview" id="goalPreview"></div>
+
+            </article>
+
+
+            <article class="panel quote-panel">
+
+              <span class="quote-mark">“</span>
+
+              <p id="dashboardQuote">
+                Every mock test is feedback.
+              </p>
+
+              <span class="quote-attribution">
+                YOUR DAILY REMINDER
+              </span>
+
+              <button
+                class="quote-refresh"
+                id="newQuote"
+                aria-label="New quote"
+              >
+                ↻
+              </button>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================
+             TESTS PAGE
+        ================================== -->
+
+        <section class="page-section hidden" id="testsPage">
+
+          <div class="page-title-row">
+
+            <div>
+
+              <div class="eyebrow">
+                MEASURE WHAT MATTERS
+              </div>
+
+              <h1>Your tests</h1>
+
+              <p class="muted">
+                Every result is useful data.
+                Capture it, then learn from it.
+              </p>
+
+            </div>
+
+            <button
+              class="button button-primary"
+              id="createTestButton"
+            >
+              ＋ Create test
+            </button>
+
+          </div>
+
+
+          <div class="panel tests-panel">
+
+            <div class="panel-heading">
+
+              <div>
+
+                <span class="panel-kicker">
+                  YOUR HISTORY
+                </span>
+
+                <h3>Recent test results</h3>
+
+              </div>
+
+              <div class="test-actions">
+
+                <span class="panel-tag" id="testCount">
+                  0 TESTS
+                </span>
+
+                <button
+                  class="inline-action"
+                  id="exportTests"
+                  type="button"
+                >
+                  Export CSV ↓
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <label class="test-search-wrap" for="testSearch">
+
+              <span aria-hidden="true">⌕</span>
+
+              <input
+                id="testSearch"
+                type="search"
+                aria-label="Search test history"
+                placeholder="Search by test name, type, subject or chapter"
+              />
+
+            </label>
+
+            <div class="tests-list" id="testsList"></div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================
+             DAILY GOALS PAGE
+        ================================== -->
+
+        <section class="page-section hidden" id="plannerPage">
+
+          <div class="page-title-row">
+
+            <div>
+
+              <div class="eyebrow">
+                ONE DAY AT A TIME
+              </div>
+
+              <h1>Daily goals</h1>
+
+              <p class="muted">
+                Make the next action small, specific and doable.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="planner-layout">
+
+            <article class="panel planner-panel">
+
+              <div class="panel-heading">
+
+                <div>
+
+                  <span class="panel-kicker">
+                    TODAY'S FOCUS
+                  </span>
+
+                  <h3 id="plannerDate">
+                    Your checklist
+                  </h3>
+
+                </div>
+
+                <span class="panel-tag" id="goalCompletion">
+                  0 / 0 DONE
+                </span>
+
+              </div>
+
+
+              <form class="goal-form" id="goalForm">
+
+                <input
+                  id="goalInput"
+                  maxlength="90"
+                  placeholder="Add a focused goal…"
+                  required
+                />
+
+                <button class="button button-primary" type="submit">
+                  Add goal
+                </button>
+
+              </form>
+
+              <div class="goals-list" id="goalsList"></div>
+
+            </article>
+
+
+            <article class="panel streak-panel">
+
+              <div class="streak-big">✦</div>
+
+              <span class="panel-kicker">
+                SHOW UP CONSISTENTLY
+              </span>
+
+              <h3>
+                <span id="plannerStreak">0</span>
+                day streak
+              </h3>
+
+              <p class="muted">
+                Complete at least one daily goal to build your
+                study streak. Your streak is based on days you
+                mark a goal complete.
+              </p>
+
+              <div class="streak-milestones">
+
+                <div>
+                  <b>7</b>
+                  <span>days</span>
+                </div>
+
+                <div>
+                  <b>20</b>
+                  <span>days</span>
+                </div>
+
+                <div>
+                  <b>50</b>
+                  <span>days</span>
+                </div>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- APP FOOTER -->
+
+      <footer class="app-footer">
+
+        <span>
+          ScoreSense AI
+          <b>·</b>
+          Turn Scores Into Success
+        </span>
+
+        <span>
+          Built for learners, powered by consistency.
+        </span>
+
+      </footer>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================
+       PROFILE MODAL
+  ====================================== -->
+
+  <div class="modal-backdrop hidden" id="profileModal">
+
+    <section class="modal-card">
+
+      <button
+        class="modal-close"
+        data-close-modal
+        aria-label="Close"
+      >
+        &times;
+      </button>
+
+      <span class="panel-kicker">
+        YOUR LEARNING PROFILE
+      </span>
+
+      <h2>Edit profile</h2>
+
+      <form class="modal-form" id="profileForm">
+
+        <label for="profileName">
+          Name
+        </label>
+
+        <input
+          id="profileName"
+          maxlength="40"
+          required
+        />
+
+
+        <label for="profileClass">
+          Class / Stage
+        </label>
+
+        <select id="profileClass" required>
+
+          <option value="Foundation">
+            Foundation (9–10)
+          </option>
+
+          <option value="Class 11">
+            Class 11
+          </option>
+
+          <option value="Class 12">
+            Class 12
+          </option>
+
+          <option value="Dropper">
+            Dropper
+          </option>
+
+        </select>
+
+
+        <label for="profileExam">
+          Target exam
+        </label>
+
+        <select id="profileExam" required>
+
+          <option value="JEE Main">
+            JEE Main
+          </option>
+
+          <option value="JEE Advanced">
+            JEE Advanced
+          </option>
+
+          <option value="JEE Main + Advanced">
+            JEE Main + Advanced
+          </option>
+
+          <option value="NEET">
+            NEET
+          </option>
+
+          <option value="Boards">
+            Boards
+          </option>
+
+        </select>
+
+
+        <div class="form-two">
+
+          <div>
+
+            <label for="profileTarget">
+              Target score
+            </label>
+
+            <input
+              id="profileTarget"
+              min="1"
+              required
+              step="0.5"
+              type="number"
+            />
+
+          </div>
+
+          <div>
+
+            <label for="profileTargetMax">
+              Target out of
+            </label>
+
+            <input
+              id="profileTargetMax"
+              min="1"
+              required
+              step="0.5"
+              type="number"
+            />
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="button button-primary full-width"
+          type="submit"
+        >
+          Save profile
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================
+       CREATE TEST MODAL
+  ====================================== -->
+
+  <div class="modal-backdrop hidden" id="testModal">
+
+    <section class="modal-card test-modal">
+
+      <button
+        class="modal-close"
+        data-close-modal
+        aria-label="Close"
+      >
+        &times;
+      </button>
+
+      <span class="panel-kicker">
+        RECORD A REAL RESULT
+      </span>
+
+      <h2>Create a test</h2>
+
+      <p class="modal-intro">
+        Enter the overall score from your result.
+        Subject scores and chapter notes are optional.
+        Leave them blank if your test report doesn't provide them.
+      </p>
+
+
+      <form class="modal-form" id="testForm">
+
+        <!-- TEST NAME -->
+
+        <label for="testName">
+          Test name
+        </label>
+
+        <input
+          id="testName"
+          maxlength="60"
+          placeholder="e.g. Weekly mock test"
+          required
+        />
+
+
+        <!-- DATE AND TYPE -->
+
+        <div class="form-two">
+
+          <div>
+
+            <label for="testDate">
+              Test date
+            </label>
+
+            <input
+              id="testDate"
+              required
+              type="date"
+            />
+
+          </div>
+
+          <div>
+
+            <label for="testType">
+              Test type
+            </label>
+
+            <select id="testType">
+
+              <option value="Full Test">
+                Full Test
+              </option>
+
+              <option value="Part Test">
+                Part Test
+              </option>
+
+              <option value="Chapter Test">
+                Chapter Test
+              </option>
+
+              <option value="School / Board Test">
+                School / Board Test
+              </option>
+
+              <option value="Practice Set">
+                Practice Set
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- OVERALL SCORE -->
+
+        <div class="form-two">
+
+          <div>
+
+            <label for="testScore">
+              Overall score obtained
+            </label>
+
+            <input
+              id="testScore"
+              inputmode="decimal"
+              min="0"
+              placeholder="e.g. 145"
+              required
+              step="0.5"
+              type="number"
+            />
+
+          </div>
+
+          <div>
+
+            <label for="testMax">
+              Overall maximum marks
+            </label>
+
+            <input
+              id="testMax"
+              inputmode="decimal"
+              min="0.5"
+              placeholder="e.g. 300"
+              required
+              step="0.5"
+              type="number"
+            />
+
+            <p class="field-help">
+              Enter the maximum marks printed on this test paper.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- SUBJECT MARKS -->
+
+        <details class="optional-analysis">
+
+          <summary>
+            Optional: subject-wise scores
+
+            <span>
+              Only if your result shows them
+            </span>
+
+          </summary>
+
+          <p>
+            Leave both fields blank for a subject if you don't
+            have its separate score. The overall score is enough
+            to save your test.
+          </p>
+
+          <div
+            class="subject-score-list"
+            id="subjectScoreRows"
+          ></div>
+
+        </details>
+
+
+        <!-- CHAPTER ANALYSIS -->
+
+        <div class="analysis-entry">
+
+          <div class="analysis-title">
+
+            <b>Chapter score leaks</b>
+
+            <span>
+              Optional · estimated marks lost
+            </span>
+
+          </div>
+
+          <p class="field-help">
+            Select a subject first. The chapter suggestions will
+            then show only topics for your selected class and subject.
+            You can also type a custom topic.
+          </p>
+
+
+          <div class="form-three">
+
+            <div>
+
+              <label for="leakSubject">
+                Subject
+              </label>
+
+              <select id="leakSubject">
+
+                <option value="">
+                  Select subject
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div>
+
+              <label for="leakChapter">
+                Chapter / topic
+              </label>
+
+              <input
+                id="leakChapter"
+                disabled
+                list="chapterSuggestions"
+                maxlength="80"
+                placeholder="Select a subject first"
+              />
+
+            </div>
+
+
+            <div>
+
+              <label for="leakMarks">
+                Marks lost
+              </label>
+
+              <input
+                id="leakMarks"
+                inputmode="decimal"
+                min="0.5"
+                placeholder="e.g. 5"
+                step="0.5"
+                type="number"
+              />
+
+            </div>
+
+          </div>
+
+
+          <datalist id="chapterSuggestions"></datalist>
+
+
+          <p class="syllabus-note">
+            Chapter names follow the CBSE 2026–27 Class XI–XII
+            structure. JEE/NEET topic coverage can differ;
+            use a custom topic when your coaching test uses
+            a different label.
+          </p>
+
+
+          <button
+            class="text-button"
+            id="addLeak"
+            type="button"
+          >
+            ＋ Add another chapter
+          </button>
+
+
+          <div id="extraLeaks"></div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+          class="button button-primary full-width"
+          type="submit"
+        >
+          Save test result
+          <span>→</span>
+        </button>
+
+      </form>
+
+    </section>
+
+  </div>
+
+
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
